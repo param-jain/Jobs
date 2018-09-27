@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
 
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
@@ -8,6 +9,7 @@ import MapScreen from './screens/MapScreen';
 import DeckScreen from './screens/DeckScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
+import store from './store/index';
 
 export default class App extends React.Component {
   render() {
@@ -26,12 +28,19 @@ export default class App extends React.Component {
           }
         })
       }
+    }, {
+      navigationOptions: {
+        tabBarVisible: false
+      },
+      lazy: true
     });
 
     return (
-      <View style={styles.container}>
-        <MainNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }
