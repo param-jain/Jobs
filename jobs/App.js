@@ -10,6 +10,7 @@ import DeckScreen from './screens/DeckScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
 import store from './store/index';
+import { Icon } from 'react-native-elements';
 
 export default class App extends React.Component {
   render() {
@@ -24,7 +25,18 @@ export default class App extends React.Component {
             screen: createStackNavigator({
               review: { screen: ReviewScreen },
               settings: { screen: SettingsScreen } 
-            })
+            }), 
+            navigationOptions: {
+              title: "Review Jobs",
+              tabBarIcon: ({ tintColor }) => {
+                return <Icon name="favorite" size={25} color={tintColor} />;
+              },
+            }
+          }
+        }, {
+          tabBarPosition: 'bottom',
+          tabBarOptions: {
+            labelStyle: { fontSize: 12 }
           }
         })
       }

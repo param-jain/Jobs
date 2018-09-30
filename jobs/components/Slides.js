@@ -50,7 +50,7 @@ const styles = {
     textStyle: {
         fontSize: 30,
         color: 'white',
-        fontFamily: 'Times New Roman',
+        //fontFamily: 'Times New Roman',
         textAlign: 'center'
     },
     slideStyle: {

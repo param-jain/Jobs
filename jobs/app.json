@@ -21,7 +21,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.Param.BunkSheet"
+    },
+    "android": {
+      "package": "com.Param.BunkSheet"
     }
   }
 }
